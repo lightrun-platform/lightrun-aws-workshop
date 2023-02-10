@@ -1,0 +1,93 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Metadata": {
+        "License": "Apache-2.0"
+    },
+    "Description": "AWS CloudFormation Sample Template for Lightrun AWS Workshop: Create an Amazon EC2 instance running the Ubuntu Linux AMI. The AMI is chosen based on the region in which the stack is run. This example creates an EC2 security group for the instance to give you SSH access from anywhere in the world.",
+    "Parameters": {
+        "KeyName": {
+            "Description": "Name of an existing EC2 KeyPair to enable SSH access to the instance",
+            "Type": "AWS::EC2::KeyPair::KeyName",
+            "ConstraintDescription": "must be the name of an existing EC2 KeyPair."
+        }
+    },
+    "Resources": {
+        "EC2Instance": {
+            "Type": "AWS::EC2::Instance",
+            "Properties": {
+                "InstanceType": "t3.small",
+                "SecurityGroups": [
+                    {
+                        "Ref": "InstanceSecurityGroup"
+                    }
+                ],
+                "KeyName": {
+                    "Ref": "KeyName"
+                },
+                "ImageId": "ami-0b0ea68c435eb488d",
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "lightrun-aws-workshop"
+                    }
+                ],
+                "UserData": "IyEvYmluL2Jhc2gKc3VkbyBzbmFwIGluc3RhbGwgZG9ja2VyCnN1ZG8gYWRkZ3JvdXAgLS1zeXN0ZW0gZG9ja2VyCnN1ZG8gYWRkdXNlciB1YnVudHUgZG9ja2VyCm5ld2dycCBkb2NrZXIKc3VkbyBzbmFwIGRpc2FibGUgZG9ja2VyCnN1ZG8gc25hcCBlbmFibGUgZG9ja2VyCmdpdCBjbG9uZSBodHRwczovL2dpdGh1Yi5jb20vbGlnaHRydW4tcGxhdGZvcm0vbGlnaHRydW4tYXdzLXdvcmtzaG9wLmdpdA=="
+            }
+        },
+        "InstanceSecurityGroup": {
+            "Type": "AWS::EC2::SecurityGroup",
+            "Properties": {
+                "GroupDescription": "Enable HTTP access over 8080 and SSH access over 22",
+                "SecurityGroupIngress": [
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": 8080,
+                        "ToPort": 8080,
+                        "CidrIp": "0.0.0.0/0"
+                    },
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": 22,
+                        "ToPort": 22,
+                        "CidrIp": "0.0.0.0/0"
+                    }
+                ]
+            }
+        }
+    },
+    "Outputs": {
+        "InstanceId": {
+            "Description": "InstanceId of the newly created EC2 instance",
+            "Value": {
+                "Ref": "EC2Instance"
+            }
+        },
+        "AZ": {
+            "Description": "Availability Zone of the newly created EC2 instance",
+            "Value": {
+                "Fn::GetAtt": [
+                    "EC2Instance",
+                    "AvailabilityZone"
+                ]
+            }
+        },
+        "PublicDNS": {
+            "Description": "Public DNSName of the newly created EC2 instance",
+            "Value": {
+                "Fn::GetAtt": [
+                    "EC2Instance",
+                    "PublicDnsName"
+                ]
+            }
+        },
+        "PublicIP": {
+            "Description": "Public IP address of the newly created EC2 instance",
+            "Value": {
+                "Fn::GetAtt": [
+                    "EC2Instance",
+                    "PublicIp"
+                ]
+            }
+        }
+    }
+}
