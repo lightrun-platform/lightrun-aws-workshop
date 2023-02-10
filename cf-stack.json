@@ -24,14 +24,14 @@
                 "KeyName": {
                     "Ref": "KeyName"
                 },
-                "ImageId": "ami-0b0ea68c435eb488d",
+                "ImageId": "ami-09cd747c78a9add63",
                 "Tags": [
                     {
                         "Key": "Name",
                         "Value": "lightrun-aws-workshop"
                     }
                 ],
-                "UserData": "IyEvYmluL2Jhc2gKc3VkbyBzbmFwIGluc3RhbGwgZG9ja2VyCnN1ZG8gYWRkZ3JvdXAgLS1zeXN0ZW0gZG9ja2VyCnN1ZG8gYWRkdXNlciB1YnVudHUgZG9ja2VyCm5ld2dycCBkb2NrZXIKc3VkbyBzbmFwIGRpc2FibGUgZG9ja2VyCnN1ZG8gc25hcCBlbmFibGUgZG9ja2VyCmdpdCBjbG9uZSBodHRwczovL2dpdGh1Yi5jb20vbGlnaHRydW4tcGxhdGZvcm0vbGlnaHRydW4tYXdzLXdvcmtzaG9wLmdpdA=="
+                "UserData": "IyEvYmluL2Jhc2gKc3VkbyBhcHQtZ2V0IHVwZGF0ZQpzdWRvIGFwdC1nZXQgaW5zdGFsbCAteSBhcHQtdHJhbnNwb3J0LWh0dHBzIGNhLWNlcnRpZmljYXRlcyBjdXJsIGdudXBnIGxzYi1yZWxlYXNlCmdpdCBjbG9uZSBodHRwczovL2dpdGh1Yi5jb20vbGlnaHRydW4tcGxhdGZvcm0vbGlnaHRydW4tYXdzLXdvcmtzaG9wLmdpdApjZCAvbGlnaHRydW4tYXdzLXdvcmtzaG9wCmN1cmwgLWZzU0wgaHR0cHM6Ly9kb3dubG9hZC5kb2NrZXIuY29tL2xpbnV4L3VidW50dS9ncGcgfCBzdWRvIGdwZyAtLWRlYXJtb3IgLW8gL3Vzci9zaGFyZS9rZXlyaW5ncy9kb2NrZXItYXJjaGl2ZS1rZXlyaW5nLmdwZwplY2hvIFwKICAiZGViIFthcmNoPWFtZDY0IHNpZ25lZC1ieT0vdXNyL3NoYXJlL2tleXJpbmdzL2RvY2tlci1hcmNoaXZlLWtleXJpbmcuZ3BnXSBodHRwczovL2Rvd25sb2FkLmRvY2tlci5jb20vbGludXgvdWJ1bnR1IFwKICAkKGxzYl9yZWxlYXNlIC1jcykgc3RhYmxlIiB8IHN1ZG8gdGVlIC9ldGMvYXB0L3NvdXJjZXMubGlzdC5kL2RvY2tlci5saXN0ID4gL2Rldi9udWxsCnN1ZG8gYXB0LWdldCB1cGRhdGUKc3VkbyBhcHQtZ2V0IGluc3RhbGwgLXkgZG9ja2VyLWNlIGRvY2tlci1jZS1jbGkgY29udGFpbmVyZC5pbwpjZCAvbGlnaHRydW4tYXdzLXdvcmtzaG9wCnN1ZG8gZG9ja2VyIHB1bGwgb3BlbmpkazoxMQ=="
             }
         },
         "InstanceSecurityGroup": {
